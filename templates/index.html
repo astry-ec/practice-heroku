@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Deployment</title>
+</head>
+<body> -->
+    <h1>Model Deployment</h1>
+    <p>
+        Enter the following values to predict the customer answer on telemarketing campaign
+    </p>
+    <p>
+        Job type : 'technician', 'blue-collar', 'self-employed', 'services', 'management', 'admin.', 'retired', 'housemaid', 'unemployed', 'student'
+    </p>
+    <p>
+        Education Background : 'professional.course', 'university.degree', 'school', 'illiterate'
+    </p>
+        <form action="{{ url_for('predict')}}" method="post">
+            <label for="default">Loan Default</label><br>
+            <input type="default" name="default" placeholder="yes/no" required="required" /><br>
+            <label for="housing">Housing Loan</label><br>
+            <input type="housing" name="housing" placeholder="yes/no" required="required" /><br>
+            <label for="loan">Other Loan</label><br>
+            <input type="loan" name="loan" placeholder="yes/no" required="required" /><br>
+            <label for="contact">Contacted Via</label><br>
+            <input type="contact" name="contact" placeholder="cellular/telephone" required="required" /><br>
+            <label for="pdays">Contacted Before</label><br>
+            <input type="pdays" name="pdays" placeholder="Yes/Never" required="required" /><br>
+            <label for="age_group">Age Group</label><br>
+            <input type="age_group" name="age_group" placeholder="Productive Adult/Young Adult/Elderly" required="required" /><br>
+            <label for="Marital_Status">Marital Status</label><br>
+            <input type="Marital_Status" name="Marital_Status" placeholder="married/not married" required="required" /><br>
+            <label for="Job_Type">Current Job</label><br>
+            <input type="Job_Type" name="Job_Type" placeholder="from list" required="required" /><br>
+            <label for="Edu_Cat">Education Background</label><br>
+            <input type="Edu_Cat" name="Edu_Cat" placeholder="from list" required="required" /><br>
+            
+            <button type="submit" class="btn" >Predict</button>
+
+        </form>
+   <br>
+   <br>
+   {{ prediction_text }} 
+   <p>
+    [0] means Customer will not accept the marketing campaign
+    <br>
+    [1] means Customer will accept the marketing campaign
+</p>
+<!-- </body>
+</html> -->
+
+{% endblock body %}
